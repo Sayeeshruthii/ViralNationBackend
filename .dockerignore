@@ -1,0 +1,4 @@
+node_modules
+npm-debug.log
+
+//ignores local modules and npm debug while copying / bundling app
