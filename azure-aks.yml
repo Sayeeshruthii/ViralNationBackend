@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: viralnation-backend-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: viralnation-backend-app
+  template:
+    metadata:
+      labels:
+        app: viralnation-backend-app
+    spec:
+      containers:
+      - name: viralnationbackend
+        image: viralnationacrrepo312.azurecr.io/sayeeshruthii/viralnationbackend:1
+        ports:
+        - containerPort: 3000
+# service type loadbalancer       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: viralnation-backend-app-svc
+spec:
+  selector:
+    app: viralnation-backend-app
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: LoadBalancer
