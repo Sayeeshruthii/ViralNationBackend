@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: viralnationbackend
-        image: viralnationacrrepo312.azurecr.io/sayeeshruthii/viralnationbackend:1
+        image: sayeecontainerregistry.azurecr.io/sayeeshruthii/viralnationbackend:25
         ports:
         - containerPort: 3000
 # service type loadbalancer       
